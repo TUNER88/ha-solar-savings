@@ -1,0 +1,112 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Solar Savings",
+        "description": "Track solar energy used at home and the money it saved. Exported energy is never counted as savings.",
+        "data": {
+          "name": "Name",
+          "solar_sensors": "Solar production sensors",
+          "export_sensor": "Grid export sensor",
+          "price_mode": "Price"
+        },
+        "data_description": {
+          "name": "Name of the device that holds the sensors.",
+          "solar_sensors": "Cumulative energy sensors (kWh or Wh) for each solar source.",
+          "export_sensor": "Optional. Cumulative energy sent to the grid. Without it, all production counts as used at home.",
+          "price_mode": "What one kWh of solar used at home is worth."
+        }
+      },
+      "fixed_price": {
+        "title": "Fixed price",
+        "description": "The price you would have paid for grid energy.",
+        "data": {
+          "price": "Price per kWh"
+        },
+        "data_description": {
+          "price": "In your Home Assistant currency per kWh."
+        }
+      },
+      "price_entity": {
+        "title": "Price entity",
+        "description": "Energy is priced with the value of this entity at the moment it is measured.",
+        "data": {
+          "price_entity": "Price entity"
+        },
+        "data_description": {
+          "price_entity": "A sensor, input_number or number with the price per kWh. Units ending in /MWh or /Wh are converted."
+        }
+      }
+    },
+    "error": {
+      "no_solar": "Pick at least one solar production sensor.",
+      "export_is_solar": "The export sensor cannot also be a solar sensor."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Solar Savings options",
+        "description": "Change sensors or the price. Totals so far are kept.",
+        "data": {
+          "solar_sensors": "Solar production sensors",
+          "export_sensor": "Grid export sensor",
+          "price_mode": "Price"
+        },
+        "data_description": {
+          "solar_sensors": "Cumulative energy sensors (kWh or Wh) for each solar source.",
+          "export_sensor": "Optional. Cumulative energy sent to the grid. Without it, all production counts as used at home.",
+          "price_mode": "What one kWh of solar used at home is worth."
+        }
+      },
+      "fixed_price": {
+        "title": "Fixed price",
+        "description": "The price you would have paid for grid energy.",
+        "data": {
+          "price": "Price per kWh"
+        },
+        "data_description": {
+          "price": "In your Home Assistant currency per kWh."
+        }
+      },
+      "price_entity": {
+        "title": "Price entity",
+        "description": "Energy is priced with the value of this entity at the moment it is measured.",
+        "data": {
+          "price_entity": "Price entity"
+        },
+        "data_description": {
+          "price_entity": "A sensor, input_number or number with the price per kWh. Units ending in /MWh or /Wh are converted."
+        }
+      }
+    },
+    "error": {
+      "no_solar": "Pick at least one solar production sensor.",
+      "export_is_solar": "The export sensor cannot also be a solar sensor."
+    }
+  },
+  "selector": {
+    "price_mode": {
+      "options": {
+        "fixed": "Fixed price",
+        "entity": "Price from an entity"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "self_consumed": {
+        "name": "Solar self-consumed energy"
+      },
+      "savings": {
+        "name": "Solar savings"
+      },
+      "source_self_consumed": {
+        "name": "{source} self-consumed energy"
+      },
+      "source_savings": {
+        "name": "{source} savings"
+      }
+    }
+  }
+}

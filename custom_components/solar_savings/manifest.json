@@ -1,0 +1,13 @@
+{
+  "domain": "solar_savings",
+  "name": "Solar Savings",
+  "codeowners": ["@TUNER88"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/TUNER88/ha-solar-savings",
+  "integration_type": "helper",
+  "iot_class": "calculated",
+  "issue_tracker": "https://github.com/TUNER88/ha-solar-savings/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

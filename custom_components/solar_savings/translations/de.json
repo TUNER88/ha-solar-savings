@@ -1,0 +1,112 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Solar Savings",
+        "description": "Erfasst selbst verbrauchten Solarstrom und das dadurch gesparte Geld. Eingespeiste Energie zählt nie als Ersparnis.",
+        "data": {
+          "name": "Name",
+          "solar_sensors": "Solar-Erzeugungssensoren",
+          "export_sensor": "Netzeinspeisungssensor",
+          "price_mode": "Preis"
+        },
+        "data_description": {
+          "name": "Name des Geräts mit den Sensoren.",
+          "solar_sensors": "Kumulative Energiesensoren (kWh oder Wh) für jede Solarquelle.",
+          "export_sensor": "Optional. Kumulative ins Netz eingespeiste Energie. Ohne ihn zählt die gesamte Erzeugung als selbst verbraucht.",
+          "price_mode": "Was eine selbst verbrauchte kWh Solarstrom wert ist."
+        }
+      },
+      "fixed_price": {
+        "title": "Fester Preis",
+        "description": "Der Preis, den du für Netzstrom gezahlt hättest.",
+        "data": {
+          "price": "Preis pro kWh"
+        },
+        "data_description": {
+          "price": "In deiner Home-Assistant-Währung pro kWh."
+        }
+      },
+      "price_entity": {
+        "title": "Preis-Entität",
+        "description": "Energie wird mit dem Wert dieser Entität zum Zeitpunkt der Messung bewertet.",
+        "data": {
+          "price_entity": "Preis-Entität"
+        },
+        "data_description": {
+          "price_entity": "Ein sensor, input_number oder number mit dem Preis pro kWh. Einheiten mit /MWh oder /Wh werden umgerechnet."
+        }
+      }
+    },
+    "error": {
+      "no_solar": "Wähle mindestens einen Solar-Erzeugungssensor.",
+      "export_is_solar": "Der Einspeisungssensor darf nicht zugleich ein Solarsensor sein."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Solar Savings Optionen",
+        "description": "Sensoren oder Preis ändern. Bisherige Summen bleiben erhalten.",
+        "data": {
+          "solar_sensors": "Solar-Erzeugungssensoren",
+          "export_sensor": "Netzeinspeisungssensor",
+          "price_mode": "Preis"
+        },
+        "data_description": {
+          "solar_sensors": "Kumulative Energiesensoren (kWh oder Wh) für jede Solarquelle.",
+          "export_sensor": "Optional. Kumulative ins Netz eingespeiste Energie. Ohne ihn zählt die gesamte Erzeugung als selbst verbraucht.",
+          "price_mode": "Was eine selbst verbrauchte kWh Solarstrom wert ist."
+        }
+      },
+      "fixed_price": {
+        "title": "Fester Preis",
+        "description": "Der Preis, den du für Netzstrom gezahlt hättest.",
+        "data": {
+          "price": "Preis pro kWh"
+        },
+        "data_description": {
+          "price": "In deiner Home-Assistant-Währung pro kWh."
+        }
+      },
+      "price_entity": {
+        "title": "Preis-Entität",
+        "description": "Energie wird mit dem Wert dieser Entität zum Zeitpunkt der Messung bewertet.",
+        "data": {
+          "price_entity": "Preis-Entität"
+        },
+        "data_description": {
+          "price_entity": "Ein sensor, input_number oder number mit dem Preis pro kWh. Einheiten mit /MWh oder /Wh werden umgerechnet."
+        }
+      }
+    },
+    "error": {
+      "no_solar": "Wähle mindestens einen Solar-Erzeugungssensor.",
+      "export_is_solar": "Der Einspeisungssensor darf nicht zugleich ein Solarsensor sein."
+    }
+  },
+  "selector": {
+    "price_mode": {
+      "options": {
+        "fixed": "Fester Preis",
+        "entity": "Preis aus einer Entität"
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "self_consumed": {
+        "name": "Solar-Eigenverbrauch"
+      },
+      "savings": {
+        "name": "Solar-Ersparnis"
+      },
+      "source_self_consumed": {
+        "name": "{source} Eigenverbrauch"
+      },
+      "source_savings": {
+        "name": "{source} Ersparnis"
+      }
+    }
+  }
+}
